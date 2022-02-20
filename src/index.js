@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterApp from './CounterApp';
+
 import { GiftSearchApp } from './GitSearchApp';
 
 import ReactDOM from 'react-dom';

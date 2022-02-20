@@ -1,37 +1,43 @@
-
 import React, { useState }  from "react";
-
+import  PropTypes  from "prop-types";
 
 
 export const AddCategory = ( {setCategories}) =>{
 
-	const [inputValue, setInputValue] = useState("wenas");
+	const [inputValue, setInputValue] = useState('as');
 
-	const hadleInputChange = (e)=>{
+	const handleInputChange = (e)=>{
 		setInputValue(e.target.value)
 	}
-	const hadleSubmit = (e)=>
+	// onsubmit o onchange es el event
+	
+	const handleSubmit = (e)=>
 	{
 		e.preventDefault();
 		if (inputValue.trim().length > 2)
 		{
-			console.log('submit hecho');
-			setCategories(cats => [ ...cats,inputValue]);
+			
+			setCategories(cats => [ inputValue, ...cats]);
+			setInputValue('');
 		}
-		setInputValue('')
+		
 	}
 
 
 	return (
-		<>
-		<form onSubmit={ hadleSubmit}>
+		
+		<form onSubmit={ handleSubmit}>
 			<input type="text"
 				value={inputValue}
-				onChange={hadleInputChange }>
+				onChange={handleInputChange }>
 			
 			</input>
 		</form>
-		</>
+		
 	);
-};
+}
+
+AddCategory.propTypes = {
+	setCategories: PropTypes.func.isRequired
+}
 
