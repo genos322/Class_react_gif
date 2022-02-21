@@ -14,7 +14,7 @@ export const GiftSearchApp = ()=>{
         // }
         return(
             <div>
-                <h2>GiftSe</h2>
+                <h2>GIFTSEARCH</h2>
                 
                <AddCategory setCategories={setCategories}></AddCategory>
                <hr/>
